@@ -5,10 +5,11 @@ public class BDHelper
 {
 
     private string string_conexion = "Data Source=maquis;Initial Catalog=DB_Bugs;User id=avisuales1;Password=avisuales1;";
+    
     private static BDHelper instance; //Unica instancia de la clase
     public static BDHelper getDBHelper()
     {
-        if (instance != null)
+        if (instance == null)
             instance = new BDHelper();
         return instance;
     }
@@ -30,7 +31,7 @@ public class BDHelper
             //  El datatable se carga con el resultado de ejecutar la sentencia en el motor de base de datos
 
             tabla.Load (cmd.ExecuteReader());
-            //  La funci�n retorna el objeto datatable con 0, 1 o mas registros
+            //  La función retorna el objeto datatable con 0, 1 o mas registros
             return tabla;
         }
         catch (Exception ex)

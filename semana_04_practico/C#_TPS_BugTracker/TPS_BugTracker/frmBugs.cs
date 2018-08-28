@@ -27,7 +27,6 @@ namespace TPS_BugTracker
 
         private void frmBugs_Load(object sender, EventArgs e)
         {
-            BDHelper helper = new BDHelper();
             //LLenar combos y limpiar grid
             llenarCombo(cboEstados, BDHelper.getDBHelper().ConsultaSQL("Select * from Estados"), "n_estado", "id_estado");
             llenarCombo(cboPrioridades, BDHelper.getDBHelper().ConsultaSQL("Select * from Prioridades"), "n_prioridad", "id_prioridad");
