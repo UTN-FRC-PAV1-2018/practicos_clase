@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0432A95F-E338-4AF2-ABBF-85DA46FBDE83}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RegistroUsuarios</RootNamespace>
+    <AssemblyName>RegistroUsuarios</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>RegistroUsuarios.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BDHelper.cs" />
+    <Compile Include="frmDetalleUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleUsuario.Designer.cs">
+      <DependentUpon>frmDetalleUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaUsuarios.Designer.cs">
+      <DependentUpon>frmConsultaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDetalleUsuario.resx">
+      <DependentUpon>frmDetalleUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaUsuarios.resx">
+      <DependentUpon>frmConsultaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUSCAR01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cabecera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrarBug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comentar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty Recycle Bin 2000.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
