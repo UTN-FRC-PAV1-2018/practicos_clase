@@ -38,11 +38,12 @@
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cboPerfil
             // 
+            this.cboPerfil.Enabled = false;
             this.cboPerfil.FormattingEnabled = true;
             this.cboPerfil.Location = new System.Drawing.Point(145, 123);
             this.cboPerfil.Name = "cboPerfil";
@@ -69,6 +70,7 @@
             // 
             // txtConfirmarPassword
             // 
+            this.txtConfirmarPassword.Enabled = false;
             this.txtConfirmarPassword.Location = new System.Drawing.Point(145, 96);
             this.txtConfirmarPassword.Name = "txtConfirmarPassword";
             this.txtConfirmarPassword.PasswordChar = '*';
@@ -86,6 +88,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Enabled = false;
             this.txtPassword.Location = new System.Drawing.Point(145, 70);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -94,6 +97,7 @@
             // 
             // txtCorreoElectronico
             // 
+            this.txtCorreoElectronico.Enabled = false;
             this.txtCorreoElectronico.Location = new System.Drawing.Point(145, 44);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(192, 20);
@@ -119,26 +123,28 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(145, 18);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(192, 20);
             this.txtNombre.TabIndex = 15;
             // 
-            // btnCerrar
+            // btnVolver
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(145, 150);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(80, 23);
-            this.btnCerrar.TabIndex = 22;
-            this.btnCerrar.Text = "Volver";
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnVolver.Location = new System.Drawing.Point(145, 150);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(80, 23);
+            this.btnVolver.TabIndex = 22;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmDetalleUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 195);
-            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.cboPerfil);
             this.Controls.Add(this.Label5);
             this.Controls.Add(this.Label4);
@@ -151,6 +157,7 @@
             this.Controls.Add(this.txtNombre);
             this.Name = "frmDetalleUsuario";
             this.Text = "Detalle Usuario";
+            this.Load += new System.EventHandler(this.frmDetalleUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +175,6 @@
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.TextBox txtNombre;
-        internal System.Windows.Forms.Button btnCerrar;
+        internal System.Windows.Forms.Button btnVolver;
     }
 }

@@ -22,7 +22,6 @@ Partial Class frmConsultaUsuarios
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.chkTodos = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -32,21 +31,14 @@ Partial Class frmConsultaUsuarios
         Me.lbl_estado = New System.Windows.Forms.Label()
         Me.btnDetalleUsuario = New System.Windows.Forms.Button()
         Me.pnl_filtros = New System.Windows.Forms.GroupBox()
-        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
+        Me.IDColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmailColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PerfilColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl_filtros.SuspendLayout()
+        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'dgvUsuarios
-        '
-        Me.dgvUsuarios.AllowUserToAddRows = False
-        Me.dgvUsuarios.AllowUserToDeleteRows = False
-        Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuarios.Location = New System.Drawing.Point(6, 115)
-        Me.dgvUsuarios.Name = "dgvUsuarios"
-        Me.dgvUsuarios.ReadOnly = True
-        Me.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvUsuarios.Size = New System.Drawing.Size(401, 192)
-        Me.dgvUsuarios.TabIndex = 8
         '
         'btnSalir
         '
@@ -135,6 +127,49 @@ Partial Class frmConsultaUsuarios
         Me.pnl_filtros.TabStop = False
         Me.pnl_filtros.Text = "Filtros"
         '
+        'dgvUsuarios
+        '
+        Me.dgvUsuarios.AllowUserToAddRows = False
+        Me.dgvUsuarios.AllowUserToDeleteRows = False
+        Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDColumn, Me.NombreColumn, Me.EmailColumn, Me.PerfilColumn})
+        Me.dgvUsuarios.Location = New System.Drawing.Point(6, 115)
+        Me.dgvUsuarios.Name = "dgvUsuarios"
+        Me.dgvUsuarios.ReadOnly = True
+        Me.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvUsuarios.Size = New System.Drawing.Size(401, 192)
+        Me.dgvUsuarios.TabIndex = 18
+        '
+        'IDColumn
+        '
+        Me.IDColumn.DataPropertyName = "id_usuario"
+        Me.IDColumn.HeaderText = "ID"
+        Me.IDColumn.Name = "IDColumn"
+        Me.IDColumn.ReadOnly = True
+        Me.IDColumn.Visible = False
+        '
+        'NombreColumn
+        '
+        Me.NombreColumn.DataPropertyName = "nombre_usuario"
+        Me.NombreColumn.HeaderText = "Nombre"
+        Me.NombreColumn.Name = "NombreColumn"
+        Me.NombreColumn.ReadOnly = True
+        '
+        'EmailColumn
+        '
+        Me.EmailColumn.DataPropertyName = "correo_electronico"
+        Me.EmailColumn.HeaderText = "Email"
+        Me.EmailColumn.Name = "EmailColumn"
+        Me.EmailColumn.ReadOnly = True
+        Me.EmailColumn.Width = 120
+        '
+        'PerfilColumn
+        '
+        Me.PerfilColumn.DataPropertyName = "nombre_perfil"
+        Me.PerfilColumn.HeaderText = "Perfil"
+        Me.PerfilColumn.Name = "PerfilColumn"
+        Me.PerfilColumn.ReadOnly = True
+        '
         'frmConsultaUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -145,13 +180,12 @@ Partial Class frmConsultaUsuarios
         Me.Controls.Add(Me.pnl_filtros)
         Me.Name = "frmConsultaUsuarios"
         Me.Text = "Consulta Usuarios"
-        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_filtros.ResumeLayout(False)
         Me.pnl_filtros.PerformLayout()
+        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents dgvUsuarios As System.Windows.Forms.DataGridView
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents chkTodos As System.Windows.Forms.CheckBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -161,4 +195,9 @@ Partial Class frmConsultaUsuarios
     Friend WithEvents lbl_estado As System.Windows.Forms.Label
     Friend WithEvents btnDetalleUsuario As System.Windows.Forms.Button
     Friend WithEvents pnl_filtros As System.Windows.Forms.GroupBox
+    Friend WithEvents dgvUsuarios As System.Windows.Forms.DataGridView
+    Private WithEvents IDColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents NombreColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents EmailColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents PerfilColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

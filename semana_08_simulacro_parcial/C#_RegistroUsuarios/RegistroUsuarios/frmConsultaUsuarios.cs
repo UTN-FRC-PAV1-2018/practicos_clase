@@ -23,6 +23,11 @@ namespace RegistroUsuarios.GUILayer
         private void btnConsultar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDetalleUsuario_Click(object sender, EventArgs e)
+        {
+
         }        
     }
 }

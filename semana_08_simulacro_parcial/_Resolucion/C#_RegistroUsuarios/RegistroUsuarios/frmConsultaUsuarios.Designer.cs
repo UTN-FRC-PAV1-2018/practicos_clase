@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.IDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PerfilColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.chkTodos = new System.Windows.Forms.CheckBox();
             this.Label3 = new System.Windows.Forms.Label();
@@ -47,12 +51,48 @@
             this.dgvUsuarios.AllowUserToAddRows = false;
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDColumn,
+            this.NombreColumn,
+            this.EmailColumn,
+            this.PerfilColumn});
             this.dgvUsuarios.Location = new System.Drawing.Point(6, 115);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(401, 192);
             this.dgvUsuarios.TabIndex = 8;
+            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+            // 
+            // IDColumn
+            // 
+            this.IDColumn.DataPropertyName = "id_usuario";
+            this.IDColumn.HeaderText = "ID";
+            this.IDColumn.Name = "IDColumn";
+            this.IDColumn.ReadOnly = true;
+            this.IDColumn.Visible = false;
+            // 
+            // NombreColumn
+            // 
+            this.NombreColumn.DataPropertyName = "nombre_usuario";
+            this.NombreColumn.HeaderText = "Nombre";
+            this.NombreColumn.Name = "NombreColumn";
+            this.NombreColumn.ReadOnly = true;
+            // 
+            // EmailColumn
+            // 
+            this.EmailColumn.DataPropertyName = "correo_electronico";
+            this.EmailColumn.HeaderText = "Email";
+            this.EmailColumn.Name = "EmailColumn";
+            this.EmailColumn.ReadOnly = true;
+            this.EmailColumn.Width = 120;
+            // 
+            // PerfilColumn
+            // 
+            this.PerfilColumn.DataPropertyName = "nombre_perfil";
+            this.PerfilColumn.HeaderText = "Perfil";
+            this.PerfilColumn.Name = "PerfilColumn";
+            this.PerfilColumn.ReadOnly = true;
             // 
             // btnSalir
             // 
@@ -62,6 +102,7 @@
             this.btnSalir.Size = new System.Drawing.Size(40, 40);
             this.btnSalir.TabIndex = 12;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // chkTodos
             // 
@@ -72,6 +113,7 @@
             this.chkTodos.TabIndex = 2;
             this.chkTodos.Text = "Todos";
             this.chkTodos.UseVisualStyleBackColor = true;
+            this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
             // 
             // Label3
             // 
@@ -153,6 +195,8 @@
             this.Controls.Add(this.pnl_filtros);
             this.Name = "frmConsultaUsuarios";
             this.Text = "Consulta Usuarios";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmConsultaUsuarios_FormClosing);
+            this.Load += new System.EventHandler(this.frmConsultaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.pnl_filtros.ResumeLayout(false);
             this.pnl_filtros.PerformLayout();
@@ -172,5 +216,9 @@
         internal System.Windows.Forms.Label lbl_estado;
         internal System.Windows.Forms.GroupBox pnl_filtros;
         internal System.Windows.Forms.Button btnDetalleUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmailColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PerfilColumn;
     }
 }

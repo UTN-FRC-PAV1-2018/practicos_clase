@@ -22,8 +22,6 @@ Partial Class frmDetalleUsuario
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtConfirmarPassword = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -32,26 +30,10 @@ Partial Class frmDetalleUsuario
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.txtPerfil = New System.Windows.Forms.TextBox()
+        Me.cboPerfil = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnVolver = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.Location = New System.Drawing.Point(143, 149)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(80, 23)
-        Me.btnCerrar.TabIndex = 33
-        Me.btnCerrar.Text = "Volver"
-        Me.btnCerrar.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(96, 125)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(43, 13)
-        Me.Label5.TabIndex = 36
-        Me.Label5.Text = "Perfil(*):"
         '
         'Label4
         '
@@ -119,21 +101,40 @@ Partial Class frmDetalleUsuario
         Me.txtNombre.Size = New System.Drawing.Size(192, 20)
         Me.txtNombre.TabIndex = 27
         '
-        'txtPerfil
+        'cboPerfil
         '
-        Me.txtPerfil.Location = New System.Drawing.Point(143, 121)
-        Me.txtPerfil.Name = "txtPerfil"
-        Me.txtPerfil.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPerfil.Size = New System.Drawing.Size(138, 20)
-        Me.txtPerfil.TabIndex = 37
+        Me.cboPerfil.Enabled = False
+        Me.cboPerfil.FormattingEnabled = True
+        Me.cboPerfil.Location = New System.Drawing.Point(143, 121)
+        Me.cboPerfil.Name = "cboPerfil"
+        Me.cboPerfil.Size = New System.Drawing.Size(192, 21)
+        Me.cboPerfil.TabIndex = 37
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(96, 124)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(43, 13)
+        Me.Label5.TabIndex = 36
+        Me.Label5.Text = "Perfil(*):"
+        '
+        'btnVolver
+        '
+        Me.btnVolver.Location = New System.Drawing.Point(143, 148)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(80, 23)
+        Me.btnVolver.TabIndex = 38
+        Me.btnVolver.Text = "Volver"
+        Me.btnVolver.UseVisualStyleBackColor = True
         '
         'frmDetalleUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(408, 204)
-        Me.Controls.Add(Me.txtPerfil)
-        Me.Controls.Add(Me.btnCerrar)
+        Me.Controls.Add(Me.btnVolver)
+        Me.Controls.Add(Me.cboPerfil)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtConfirmarPassword)
@@ -149,8 +150,6 @@ Partial Class frmDetalleUsuario
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnCerrar As System.Windows.Forms.Button
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txtConfirmarPassword As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -159,5 +158,7 @@ Partial Class frmDetalleUsuario
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
-    Friend WithEvents txtPerfil As System.Windows.Forms.TextBox
+    Friend WithEvents cboPerfil As System.Windows.Forms.ComboBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents btnVolver As System.Windows.Forms.Button
 End Class
