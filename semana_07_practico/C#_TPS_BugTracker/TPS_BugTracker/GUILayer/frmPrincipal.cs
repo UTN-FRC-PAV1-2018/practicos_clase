@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPS_BugTracker.GUILayer.Login;
 
-namespace TPS_BugTracker
+namespace TPS_BugTracker.GUILayer
 {
     public partial class frmPrincipal : Form
     {

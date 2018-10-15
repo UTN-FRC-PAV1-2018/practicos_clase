@@ -99,7 +99,7 @@ public class BDHelper
 
     }
 
-    public int EjecutarSQL(string strSql)
+    public int EjecutarSQL(string strSql, List<SqlParameter> parametros = null)
     {
         // Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
         SqlConnection conexion = new SqlConnection();
@@ -123,8 +123,10 @@ public class BDHelper
             cmd.CommandType = CommandType.Text;
             // Establece la instrucción a ejecutar
             cmd.CommandText = strSql;
-            // Retorna el resultado de ejecutar el comando
+            if (parametros != null) 
+                cmd.Parameters.AddRange(parametros.ToArray());
 
+            // Retorna el resultado de ejecutar el comando
             rtdo = cmd.ExecuteNonQuery();
             t.Commit();
         }

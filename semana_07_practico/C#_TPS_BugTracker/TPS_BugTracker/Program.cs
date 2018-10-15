@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TPS_BugTracker.GUILayer;
+using TPS_BugTracker.GUILayer.Bugs;
+using TPS_BugTracker.GUILayer.Usuarios;
 
 namespace TPS_BugTracker
 {

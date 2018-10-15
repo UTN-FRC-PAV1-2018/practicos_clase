@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPS_BugTracker.BusinessLayer.Entities;
 
-namespace TPS_BugTracker
+namespace TPS_BugTracker.GUILayer.Bugs
 {
     public partial class frmDetalleBug : Form
     {
@@ -32,6 +32,11 @@ namespace TPS_BugTracker
             dgv_historiales.Rows.Clear();
             foreach (HistorialBug oHistorialBug in oBugSelected.historial)
                 dgv_historiales.Rows.Add(new string[] { oHistorialBug.fecha.ToString("dd/MM/yyyy"), oHistorialBug.n_responsable, oHistorialBug.n_estado, oHistorialBug.n_asignado_a });
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -55,28 +55,35 @@
     <Compile Include="BusinessLayer\Entities\HistorialBug.cs" />
     <Compile Include="BusinessLayer\Services\BugService.cs" />
     <Compile Include="DataLayer\DAOs\BugDao.cs" />
-    <Compile Include="GUILayer\frmABMUsuario.cs">
+    <Compile Include="GUILayer\Bugs\frmActualizarBug.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\frmABMUsuario.Designer.cs">
+    <Compile Include="GUILayer\Bugs\frmActualizarBug.Designer.cs">
+      <DependentUpon>frmActualizarBug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Helper\GUIHelper.cs" />
+    <Compile Include="GUILayer\Usuarios\frmABMUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Usuarios\frmABMUsuario.Designer.cs">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\frmBugs.cs">
+    <Compile Include="GUILayer\Bugs\frmBugs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\frmBugs.Designer.cs">
+    <Compile Include="GUILayer\Bugs\frmBugs.Designer.cs">
       <DependentUpon>frmBugs.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\frmDetalleBug.cs">
+    <Compile Include="GUILayer\Bugs\frmDetalleBug.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\frmDetalleBug.Designer.cs">
+    <Compile Include="GUILayer\Bugs\frmDetalleBug.Designer.cs">
       <DependentUpon>frmDetalleBug.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\frmLogin.cs">
+    <Compile Include="GUILayer\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\frmLogin.Designer.cs">
+    <Compile Include="GUILayer\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\frmPrincipal.cs">
@@ -85,30 +92,33 @@
     <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\frmUsuarios.cs">
+    <Compile Include="GUILayer\Usuarios\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\frmUsuarios.Designer.cs">
+    <Compile Include="GUILayer\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUILayer\frmABMUsuario.resx">
+    <EmbeddedResource Include="GUILayer\Bugs\frmActualizarBug.resx">
+      <DependentUpon>frmActualizarBug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\frmBugs.resx">
+    <EmbeddedResource Include="GUILayer\Bugs\frmBugs.resx">
       <DependentUpon>frmBugs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\frmDetalleBug.resx">
+    <EmbeddedResource Include="GUILayer\Bugs\frmDetalleBug.resx">
       <DependentUpon>frmDetalleBug.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\frmLogin.resx">
+    <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\frmUsuarios.resx">
+    <EmbeddedResource Include="GUILayer\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
