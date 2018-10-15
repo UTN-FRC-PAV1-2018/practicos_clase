@@ -128,6 +128,8 @@ namespace TPS_BugTracker.DataLayer.DAOs
             parametros.Add(new SqlParameter("id_producto", oBugSelected.id_producto));
             parametros.Add(new SqlParameter("id_prioridad", oBugSelected.id_prioridad));
             parametros.Add(new SqlParameter("id_criticidad", oBugSelected.id_criticidad));
+            
+            BDHelper.getBDHelper().EjecutarSQL(sql, parametros);
 
             foreach (var item in oBugSelected.historial)
             {
@@ -138,8 +140,6 @@ namespace TPS_BugTracker.DataLayer.DAOs
                     oHistorialBug.create(oBugSelected.id_bug, item);
                 }
             }
-
-
 
             return true;
         }
