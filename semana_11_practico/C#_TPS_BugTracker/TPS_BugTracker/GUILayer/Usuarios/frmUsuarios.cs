@@ -11,8 +11,9 @@ using System.Windows;
 using System.Windows.Forms;
 using TPS_BugTracker.BusinessLayer;
 using TPS_BugTracker.BusinessLayer.Services;
+using TPS_BugTracker.GUILayer.Helper;
 
-namespace TPS_BugTracker.GUILayer
+namespace TPS_BugTracker.GUILayer.Usuarios
 {
     public partial class frmUsuarios : Form
     {
@@ -27,21 +28,14 @@ namespace TPS_BugTracker.GUILayer
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            llenarCombo(cbo_perfiles, BDHelper.getBDHelper().ConsultaSQL("SELECT * From Perfiles WHERE id_perfil <> 1"), "n_perfil", "id_perfil");
-        }
-
-        private void llenarCombo(ComboBox cbo, Object source, string display, String value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
+            GUIHelper.getHelper().llenarCombo(cbo_perfiles, BDHelper.getBDHelper().ConsultaSQL("SELECT * From Perfiles WHERE id_perfil <> 1"), "n_perfil", "id_perfil");
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
             frmABMUsuario formulario = new frmABMUsuario();
             formulario.ShowDialog();
+            btn_consultar_Click(sender, e);
         }
 
         private void chk_todos_CheckedChanged(object sender, EventArgs e)

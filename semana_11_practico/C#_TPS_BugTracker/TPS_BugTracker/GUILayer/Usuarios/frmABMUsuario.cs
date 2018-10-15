@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPS_BugTracker.BusinessLayer;
 using TPS_BugTracker.BusinessLayer.Services;
+using TPS_BugTracker.GUILayer.Helper;
 
-namespace TPS_BugTracker.GUILayer
+namespace TPS_BugTracker.GUILayer.Usuarios
 {
     public partial class frmABMUsuario : Form
     {
@@ -32,7 +33,7 @@ namespace TPS_BugTracker.GUILayer
 
         private void frmABMUsuario_Load(System.Object sender, System.EventArgs e)
         {
-            llenarCombo(cbo_perfil, BDHelper.getBDHelper().ConsultaSQL("SELECT * From Perfiles WHERE id_perfil <> 1"), "n_perfil", "id_perfil");
+            GUIHelper.getHelper().llenarCombo(cbo_perfil, BDHelper.getBDHelper().ConsultaSQL("SELECT * From Perfiles WHERE id_perfil <> 1"), "n_perfil", "id_perfil");
             switch (_action)
             {
                 case Opcion.insert:
@@ -231,20 +232,9 @@ namespace TPS_BugTracker.GUILayer
         }
 
 
-        private void llenarCombo(ComboBox cbo, Object source, string display, String value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-        }
-
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
-
-      
-
     }
 }

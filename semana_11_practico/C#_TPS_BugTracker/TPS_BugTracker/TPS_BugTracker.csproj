@@ -50,14 +50,18 @@
     <Compile Include="BusinessLayer\Entities\Criticidad.cs" />
     <Compile Include="BusinessLayer\Entities\Prioridad.cs" />
     <Compile Include="BusinessLayer\Entities\Producto.cs" />
+    <Compile Include="BusinessLayer\Entities\Estado.cs" />
     <Compile Include="BusinessLayer\Entities\Usuario.cs" />
     <Compile Include="BusinessLayer\Services\CriticidadService.cs" />
     <Compile Include="BusinessLayer\Services\PrioridadService.cs" />
+    <Compile Include="BusinessLayer\Services\EstadoService.cs" />
     <Compile Include="BusinessLayer\Services\ProductService.cs" />
     <Compile Include="BusinessLayer\Services\UsuarioService.cs" />
+    <Compile Include="DataLayer\DAOs\EstadoDao.cs" />
+    <Compile Include="DataLayer\DAOs\CriticidadDao.cs" />
+    <Compile Include="DataLayer\DAOs\HistorialBugDao.cs" />
     <Compile Include="DataLayer\DAOs\PrioridadDao.cs" />
     <Compile Include="DataLayer\DAOs\ProductoDao.cs" />
-    <Compile Include="DataLayer\DAOs\CriticidadDao.cs" />
     <Compile Include="DataLayer\DAOs\UsuarioDao.cs" />
     <Compile Include="DataLayer\Helper\BDHelper.cs" />
     <Compile Include="BusinessLayer\Entities\Bug.cs" />
@@ -76,10 +80,11 @@
     <Compile Include="GUILayer\Bugs\frmAsignarBug.Designer.cs">
       <DependentUpon>frmAsignarBug.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Usuario\frmABMUsuario.cs">
+    <Compile Include="GUILayer\Helper\GUIHelper.cs" />
+    <Compile Include="GUILayer\Usuarios\frmABMUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Usuario\frmABMUsuario.Designer.cs">
+    <Compile Include="GUILayer\Usuarios\frmABMUsuario.Designer.cs">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Bugs\frmBugs.cs">
@@ -106,10 +111,10 @@
     <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Usuario\frmUsuarios.cs">
+    <Compile Include="GUILayer\Usuarios\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Usuario\frmUsuarios.Designer.cs">
+    <Compile Include="GUILayer\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -120,7 +125,7 @@
     <EmbeddedResource Include="GUILayer\Bugs\frmAsignarBug.resx">
       <DependentUpon>frmAsignarBug.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Usuario\frmABMUsuario.resx">
+    <EmbeddedResource Include="GUILayer\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Bugs\frmBugs.resx">
@@ -135,7 +140,7 @@
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Usuario\frmUsuarios.resx">
+    <EmbeddedResource Include="GUILayer\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

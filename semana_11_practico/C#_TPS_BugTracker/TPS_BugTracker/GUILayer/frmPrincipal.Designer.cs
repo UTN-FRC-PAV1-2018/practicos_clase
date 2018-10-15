@@ -47,13 +47,13 @@
             this.SoporteToolStripMenuItem.Name = "SoporteToolStripMenuItem";
             this.SoporteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.SoporteToolStripMenuItem.Text = "&Soporte";
-            this.SoporteToolStripMenuItem.Click += new System.EventHandler(this.SoporteToolStripMenuItem_Click);
             // 
             // UsuariosToolStripMenuItem
             // 
             this.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem";
             this.UsuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.UsuariosToolStripMenuItem.Text = "Usuarios";
+            this.UsuariosToolStripMenuItem.Click += new System.EventHandler(this.UsuariosToolStripMenuItem_Click);
             // 
             // BugsToolStripMenuItem
             // 
@@ -68,12 +68,14 @@
             this.ConsultaDeBugsToolStripMenuItem.Name = "ConsultaDeBugsToolStripMenuItem";
             this.ConsultaDeBugsToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.ConsultaDeBugsToolStripMenuItem.Text = "&Consulta de bugs";
+            this.ConsultaDeBugsToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeBugsToolStripMenuItem_Click);
             // 
             // SalirToolStripMenuItem
             // 
             this.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem";
             this.SalirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.SalirToolStripMenuItem.Text = "&Salir";
+            this.SalirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
             // Mnu_principal
             // 
@@ -101,7 +103,7 @@
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            
             // 
             // frmPrincipal
             // 

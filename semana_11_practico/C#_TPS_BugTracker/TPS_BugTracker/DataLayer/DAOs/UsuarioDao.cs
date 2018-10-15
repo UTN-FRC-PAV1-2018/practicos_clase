@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,21 @@ namespace TPS_BugTracker.DataLayer.DAOs
         // Permite recuperar un usuario a partir de un nombre y password
         public Usuario getUserByNamePass(string nombre, string password)
         {
-            string sql = "Select x.*, y.n_perfil, y.id_perfil as perfil_usuario from Users x, Perfiles y where x.id_perfil=y.id_perfil AND x.n_usuario = '" + nombre + "' AND password = '" + password + "'";
+            string sql =     "  SELECT u.*, p.n_perfil, p.id_perfil as perfil_usuario" + 
+                    "         FROM Users u " +
+                    "         INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil " +
+                    "         WHERE estado = 'S'" +
+                    "           AND u.n_usuario = @param1 " + 
+                    "           AND password = @param2";
+            
+            List<object> parametros = new List<object>();
+            parametros.Add(nombre);
+            parametros.Add(password);
+            
             DataTable oTabla;
             Usuario oUsuario = null/* TODO Change to default(_) if this is not a reference type */;
 
-            oTabla = BDHelper.getBDHelper().ConsultaSQL(sql);
+            oTabla = BDHelper.getBDHelper().ConsultaSQLConParametros(sql, parametros);
             if (oTabla.Rows.Count > 0)
                 oUsuario = map_user(oTabla.Rows[0]);
 
@@ -26,26 +37,34 @@ namespace TPS_BugTracker.DataLayer.DAOs
 
         public Usuario getUserByName(string nombre)
         {
-            string sql = "Select x.*, y.n_perfil, y.id_perfil as perfil_usuario from Users x, Perfiles y where x.id_perfil=y.id_perfil AND x.n_usuario = '" + nombre + "'";
+            string sql = "  SELECT u.*, p.n_perfil, p.id_perfil as perfil_usuario" +
+                    "         FROM Users u " +
+                    "         INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil " +
+                    "         WHERE estado = 'S'" +
+                    "           AND u.n_usuario = @param1 ";
+
+            List<object> parametros = new List<object>();
+            parametros.Add(nombre);
+        
             DataTable oTabla;
             Usuario oUsuario = null/* TODO Change to default(_) if this is not a reference type */;
 
-            oTabla = BDHelper.getBDHelper().ConsultaSQL(sql);
+            oTabla = BDHelper.getBDHelper().ConsultaSQLConParametros(sql, parametros);
             if (oTabla.Rows.Count >  0)
                 oUsuario = map_user(oTabla.Rows[0]);
 
             return oUsuario;
         }
 
-
-
         // Permite recuperar todos los usuarios cargados
         public IList<Usuario> getAll()
         {
             List<Usuario> lst = new List<Usuario>();
-            string sql = "Select x.*, y.n_perfil, y.id_perfil as perfil_usuario from Users x, Perfiles y where x.id_perfil=y.id_perfil";
-            Usuario oUsuario = null/* TODO Change to default(_) if this is not a reference type */;
-
+            string sql = "  SELECT u.*, p.n_perfil, p.id_perfil as perfil_usuario" +
+                     "         FROM Users u " +
+                     "         INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil " +
+                     "        WHERE estado = 'S'";
+            
             foreach (DataRow row in BDHelper.getBDHelper().ConsultaSQL(sql).Rows)
                 lst.Add(map_user(row));
 
@@ -54,18 +73,20 @@ namespace TPS_BugTracker.DataLayer.DAOs
 
         // Permite recuperar todos los usuarios cargados para un determinado rango de fechas y/o perfil recibidos como 
         // parámetrosr
-        public IList<Usuario> getByFilters(List<object> @params)
+        public IList<Usuario> getByFilters(List<object> parametros)
         {
             List<Usuario> lst = new List<Usuario>();
-            string sql = "Select x.*, y.n_perfil, y.id_perfil as perfil_usuario from Users x, Perfiles y where x.id_perfil=y.id_perfil and estado = 'S'";
-            Usuario oUsuario = null/* TODO Change to default(_) if this is not a reference type */;
+            string sql = "  SELECT u.*, p.n_perfil, p.id_perfil as perfil_usuario" + 
+                    "         FROM Users u " +
+                    "         INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil " +
+                    "        WHERE estado = 'S'";
 
-            if (@params[0] != null)
-                sql += " AND x.id_perfil=@param1 ";
-            if (@params[1] != null)
-                sql += " AND x.n_usuario LIKE '%' + @param2 + '%' ";
+            if (parametros[0] != null)
+                sql += " AND u.id_perfil=@param1 ";
+            if (parametros[1] != null)
+                sql += " AND u.n_usuario LIKE '%' + @param2 + '%' ";
 
-            foreach (DataRow row in BDHelper.getBDHelper().ConsultaSQLConParametros(sql, @params).Rows)
+            foreach (DataRow row in BDHelper.getBDHelper().ConsultaSQLConParametros(sql, parametros).Rows)
                 lst.Add(map_user(row));
 
             return lst;
@@ -76,14 +97,17 @@ namespace TPS_BugTracker.DataLayer.DAOs
         {
             string str_sql;
 
-            str_sql = "INSERT INTO users (n_usuario, password, email, id_perfil, estado) VALUES('";
-            str_sql += oUsuario.nombre + "','";
-            str_sql += oUsuario.password + "','";
-            str_sql += oUsuario.email + "',";
-            str_sql += oUsuario.id_perfil.ToString() + ", 'S')";
+            str_sql = "INSERT INTO users (n_usuario, password, email, id_perfil, estado)" +
+                      "     VALUES(@n_usuario, @password, @email, @id_perfil, 'S')";
+
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("n_usuario", oUsuario.nombre));
+            parametros.Add(new SqlParameter("password", oUsuario.password));
+            parametros.Add(new SqlParameter("email", oUsuario.email));
+            parametros.Add(new SqlParameter("id_perfil", oUsuario.id_perfil));
 
             // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
-            return (BDHelper.getBDHelper().EjecutarSQL(str_sql) == 1);
+            return (BDHelper.getBDHelper().EjecutarSQL(str_sql, parametros) == 1);
         }
         // Funciones CRUD
 
@@ -91,17 +115,24 @@ namespace TPS_BugTracker.DataLayer.DAOs
         {
             string str_sql;
 
-            str_sql = "UPDATE users SET n_usuario = '";
-            str_sql += oUsuario.nombre + "', password = '";
-            str_sql += oUsuario.password + "', email = '";
-            str_sql += oUsuario.email + "', id_perfil = ";
-            str_sql += oUsuario.id_perfil.ToString() + ", estado = '";
-            str_sql += oUsuario.estado + "'";
+            str_sql = "UPDATE users" +
+                    "     SET n_usuario = @n_usuario," + 
+                    "         password = @password, " + 
+                    "         email = @email, "+
+                    "         estado = @estado, " + 
+                    "         id_perfil = @id_perfil" + 
+                    "   WHERE id_usuario = @id_usuario";
 
-            str_sql += " WHERE id_usuario = " + oUsuario.id_usuario.ToString();
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("id_usuario", oUsuario.id_usuario));
+            parametros.Add(new SqlParameter("n_usuario", oUsuario.nombre));
+            parametros.Add(new SqlParameter("password", oUsuario.password));
+            parametros.Add(new SqlParameter("email", oUsuario.email));
+            parametros.Add(new SqlParameter("estado", oUsuario.estado));
+            parametros.Add(new SqlParameter("id_perfil", oUsuario.id_perfil));            
 
             // Si una fila es afectada por la actualización retorna TRUE. Caso contrario FALSE
-            return (BDHelper.getBDHelper().EjecutarSQL(str_sql) == 1);
+            return (BDHelper.getBDHelper().EjecutarSQL(str_sql, parametros) == 1);
         }
 
         // Función auxiliar responsable de MAPPEAR una fila de Users a un objeto Usuario
@@ -119,7 +150,4 @@ namespace TPS_BugTracker.DataLayer.DAOs
             return oUsuario;
         }
     }
-
-
-
 }

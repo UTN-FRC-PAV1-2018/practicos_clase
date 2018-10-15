@@ -8,17 +8,17 @@ using TPS_BugTracker.DataLayer.DAOs;
 
 namespace TPS_BugTracker.BusinessLayer.Services
 {
-    class ProductoService
+    class EstadoService
     {
-         private ProductoDao oProductoDao;
-         public ProductoService()
-    {
-        oProductoDao = new ProductoDao();
-    }
+        private EstadoDao oEstadoDao;
+        public EstadoService()
+        {
+            oEstadoDao = new EstadoDao();
+        }
 
-    public List<Producto> consultarProductos()
-    {
-        return oProductoDao.getAll();
-    }
+        public List<Estado> consultarEstados()
+        {
+            return oEstadoDao.getAll();
+        }
     }
 }

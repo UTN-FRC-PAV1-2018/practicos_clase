@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using TPS_BugTracker.BusinessLayer;
 using TPS_BugTracker.BusinessLayer.Services;
 
-namespace TPS_BugTracker
+namespace TPS_BugTracker.GUILayer.Login
 {
     public partial class frmLogin : Form
     {

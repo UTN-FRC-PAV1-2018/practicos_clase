@@ -1,4 +1,4 @@
-﻿namespace TPS_BugTracker.GUILayer
+﻿namespace TPS_BugTracker.GUILayer.Usuarios
 {
     partial class frmUsuarios
     {
@@ -73,11 +73,12 @@
             this.col_perfil,
             this.col_id,
             this.col_pass});
-            this.dgv_users.Location = new System.Drawing.Point(26, 115);
+            this.dgv_users.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_users.Location = new System.Drawing.Point(3, 118);
             this.dgv_users.Name = "dgv_users";
             this.dgv_users.ReadOnly = true;
             this.dgv_users.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_users.Size = new System.Drawing.Size(372, 192);
+            this.dgv_users.Size = new System.Drawing.Size(407, 192);
             this.dgv_users.TabIndex = 8;
             this.dgv_users.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_users_CellClick);
             // 
@@ -233,6 +234,8 @@
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.pnl_filtros);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmUsuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);

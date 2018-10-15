@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using TPS_BugTracker.BusinessLayer;
 using TPS_BugTracker.GUILayer;
 using TPS_BugTracker.GUILayer.Bugs;
+using TPS_BugTracker.GUILayer.Login;
+using TPS_BugTracker.GUILayer.Usuarios;
 
 namespace TPS_BugTracker
 {
@@ -42,7 +44,8 @@ namespace TPS_BugTracker
 
         private void ConsultaDeBugsToolStripMenuItem_Click(System.Object sender, System.EventArgs e)
         {
-            (new frmBugs()).ShowDialog();
+            frmBugs Bugs = new frmBugs();
+            Bugs.ShowDialog();
         }
 
         private void SalirToolStripMenuItem_Click(System.Object sender, System.EventArgs e)
@@ -52,7 +55,8 @@ namespace TPS_BugTracker
 
         private void UsuariosToolStripMenuItem_Click(System.Object sender, System.EventArgs e)
         {
-            (new frmUsuarios()).ShowDialog();
+            frmUsuarios usuarios = new frmUsuarios();
+            usuarios.ShowDialog();
         }
 
         public static Usuario obtenerUsuarioLogin()
@@ -60,20 +64,7 @@ namespace TPS_BugTracker
             return userLogin;
         }
 
-        private void bugsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmBugs bugs = new frmBugs();
-            bugs.ShowDialog();
-        }
 
-        private void SoporteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

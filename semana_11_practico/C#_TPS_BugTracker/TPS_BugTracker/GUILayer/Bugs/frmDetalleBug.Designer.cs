@@ -1,4 +1,4 @@
-﻿namespace TPS_BugTracker
+﻿namespace TPS_BugTracker.GUILayer.Bugs
 {
     partial class frmDetalleBug
     {
@@ -99,7 +99,7 @@
             // 
             this.txtCriticidad.Enabled = false;
             this.txtCriticidad.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCriticidad.Location = new System.Drawing.Point(146, 284);
+            this.txtCriticidad.Location = new System.Drawing.Point(146, 279);
             this.txtCriticidad.Name = "txtCriticidad";
             this.txtCriticidad.Size = new System.Drawing.Size(262, 22);
             this.txtCriticidad.TabIndex = 36;
@@ -107,7 +107,7 @@
             // Label10
             // 
             this.Label10.AutoSize = true;
-            this.Label10.Location = new System.Drawing.Point(93, 284);
+            this.Label10.Location = new System.Drawing.Point(93, 279);
             this.Label10.Name = "Label10";
             this.Label10.Size = new System.Drawing.Size(53, 13);
             this.Label10.TabIndex = 35;
@@ -135,7 +135,7 @@
             // 
             this.txtPrioridad.Enabled = false;
             this.txtPrioridad.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrioridad.Location = new System.Drawing.Point(146, 258);
+            this.txtPrioridad.Location = new System.Drawing.Point(146, 253);
             this.txtPrioridad.Name = "txtPrioridad";
             this.txtPrioridad.Size = new System.Drawing.Size(262, 22);
             this.txtPrioridad.TabIndex = 32;
@@ -143,7 +143,7 @@
             // Label7
             // 
             this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(98, 261);
+            this.Label7.Location = new System.Drawing.Point(98, 256);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(51, 13);
             this.Label7.TabIndex = 31;
@@ -153,7 +153,7 @@
             // 
             this.txtEstado.Enabled = false;
             this.txtEstado.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(146, 233);
+            this.txtEstado.Location = new System.Drawing.Point(146, 228);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(262, 22);
             this.txtEstado.TabIndex = 30;
@@ -161,7 +161,7 @@
             // Label5
             // 
             this.Label5.AutoSize = true;
-            this.Label5.Location = new System.Drawing.Point(101, 238);
+            this.Label5.Location = new System.Drawing.Point(101, 233);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(43, 13);
             this.Label5.TabIndex = 29;
@@ -189,7 +189,7 @@
             // 
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(146, 130);
+            this.txtDescripcion.Location = new System.Drawing.Point(146, 128);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(262, 97);
@@ -226,7 +226,7 @@
             // 
             this.txtNroBug.Enabled = false;
             this.txtNroBug.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroBug.Location = new System.Drawing.Point(146, 23);
+            this.txtNroBug.Location = new System.Drawing.Point(146, 26);
             this.txtNroBug.Name = "txtNroBug";
             this.txtNroBug.Size = new System.Drawing.Size(68, 22);
             this.txtNroBug.TabIndex = 22;
@@ -234,7 +234,7 @@
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(107, 28);
+            this.Label1.Location = new System.Drawing.Point(107, 31);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(39, 13);
             this.Label1.TabIndex = 21;
@@ -246,7 +246,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(504, 376);
+            this.tabPage2.Size = new System.Drawing.Size(504, 357);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Historial";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -265,7 +265,7 @@
             this.dgv_historiales.Location = new System.Drawing.Point(3, 3);
             this.dgv_historiales.Name = "dgv_historiales";
             this.dgv_historiales.ReadOnly = true;
-            this.dgv_historiales.Size = new System.Drawing.Size(498, 370);
+            this.dgv_historiales.Size = new System.Drawing.Size(498, 351);
             this.dgv_historiales.TabIndex = 23;
             // 
             // fec_col
@@ -300,6 +300,7 @@
             this.btnAceptar.TabIndex = 19;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // frmDetalleBug
             // 

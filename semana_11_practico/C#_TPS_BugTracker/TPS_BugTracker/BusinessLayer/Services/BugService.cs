@@ -11,17 +11,13 @@ namespace TPS_BugTracker.BusinessLayer.Services
     public class BugService
     {
         private BugDao oBugDao;
+        private HistorialBugDao oHistorialBugDao;
         public BugService()
         {
             oBugDao = new BugDao();
+            oHistorialBugDao = new HistorialBugDao();
         }
-
-        public bool create(Bug oBug)
-        {
-            return oBugDao.create(oBug);
-        }
-
-        public List<Bug> consultarBugsConFiltros(List<object> @params)
+        public IList<Bug> consultarBugsConFiltros(List<object> @params)
         {
             return oBugDao.getBugByFilters(@params);
         }
@@ -31,9 +27,9 @@ namespace TPS_BugTracker.BusinessLayer.Services
             return oBugDao.getBugById(id);
         }
 
-        public bool actualizarBugConHistorial(List<Bug> lst)
+        public bool actualizarBug(Bug oBug)
         {
-            return oBugDao.updateNewHistorial(lst);
+            return oBugDao.update(oBug);
         }
     }
 }

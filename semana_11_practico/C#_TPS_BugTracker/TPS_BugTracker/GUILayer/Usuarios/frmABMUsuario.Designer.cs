@@ -1,4 +1,4 @@
-﻿namespace TPS_BugTracker.GUILayer
+﻿namespace TPS_BugTracker.GUILayer.Usuarios
 {
     partial class frmABMUsuario
     {
@@ -162,6 +162,8 @@
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.txt_nombre);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmABMUsuario";
             this.Text = "Nuevo Usuario";
             this.Load += new System.EventHandler(this.frmABMUsuario_Load);

@@ -30,9 +30,9 @@
         {
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_aceptar = new System.Windows.Forms.Button();
-            this.txt_titulo = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.Label3 = new System.Windows.Forms.Label();
-            this.txt_id = new System.Windows.Forms.TextBox();
+            this.txtIdBug = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
             this.cbo_desa = new System.Windows.Forms.ComboBox();
             this.Label1 = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.btn_cancelar.TabIndex = 15;
             this.btn_cancelar.Text = "&Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click_1);
             // 
             // btn_aceptar
             // 
@@ -57,16 +58,16 @@
             this.btn_aceptar.UseVisualStyleBackColor = true;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
-            // txt_titulo
+            // txtTitulo
             // 
-            this.txt_titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txt_titulo.Enabled = false;
-            this.txt_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_titulo.ForeColor = System.Drawing.Color.Black;
-            this.txt_titulo.Location = new System.Drawing.Point(91, 52);
-            this.txt_titulo.Name = "txt_titulo";
-            this.txt_titulo.Size = new System.Drawing.Size(244, 20);
-            this.txt_titulo.TabIndex = 13;
+            this.txtTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtTitulo.Enabled = false;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.ForeColor = System.Drawing.Color.Black;
+            this.txtTitulo.Location = new System.Drawing.Point(91, 52);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(244, 20);
+            this.txtTitulo.TabIndex = 13;
             // 
             // Label3
             // 
@@ -77,16 +78,16 @@
             this.Label3.TabIndex = 12;
             this.Label3.Text = "Título:";
             // 
-            // txt_id
+            // txtIdBug
             // 
-            this.txt_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txt_id.Enabled = false;
-            this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.ForeColor = System.Drawing.Color.Black;
-            this.txt_id.Location = new System.Drawing.Point(91, 27);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(85, 20);
-            this.txt_id.TabIndex = 11;
+            this.txtIdBug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtIdBug.Enabled = false;
+            this.txtIdBug.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdBug.ForeColor = System.Drawing.Color.Black;
+            this.txtIdBug.Location = new System.Drawing.Point(91, 27);
+            this.txtIdBug.Name = "txtIdBug";
+            this.txtIdBug.Size = new System.Drawing.Size(85, 20);
+            this.txtIdBug.TabIndex = 11;
             // 
             // Label2
             // 
@@ -121,9 +122,9 @@
             this.ClientSize = new System.Drawing.Size(355, 172);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
-            this.Controls.Add(this.txt_titulo);
+            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.Label3);
-            this.Controls.Add(this.txt_id);
+            this.Controls.Add(this.txtIdBug);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.cbo_desa);
             this.Controls.Add(this.Label1);
@@ -132,7 +133,6 @@
             this.Name = "frmAsignarBug";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Asignar Bug a desarrollador";
-            this.Load += new System.EventHandler(this.frmAsignarBug_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,9 +142,9 @@
 
         internal System.Windows.Forms.Button btn_cancelar;
         internal System.Windows.Forms.Button btn_aceptar;
-        internal System.Windows.Forms.TextBox txt_titulo;
+        internal System.Windows.Forms.TextBox txtTitulo;
         internal System.Windows.Forms.Label Label3;
-        internal System.Windows.Forms.TextBox txt_id;
+        internal System.Windows.Forms.TextBox txtIdBug;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.ComboBox cbo_desa;
         internal System.Windows.Forms.Label Label1;
