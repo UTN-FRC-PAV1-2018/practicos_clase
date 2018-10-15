@@ -246,7 +246,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(504, 376);
+            this.tabPage2.Size = new System.Drawing.Size(504, 357);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Historial";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -265,7 +265,7 @@
             this.dgv_historiales.Location = new System.Drawing.Point(3, 3);
             this.dgv_historiales.Name = "dgv_historiales";
             this.dgv_historiales.ReadOnly = true;
-            this.dgv_historiales.Size = new System.Drawing.Size(498, 370);
+            this.dgv_historiales.Size = new System.Drawing.Size(498, 351);
             this.dgv_historiales.TabIndex = 23;
             // 
             // fec_col
@@ -300,6 +300,7 @@
             this.btnAceptar.TabIndex = 19;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // frmDetalleBug
             // 

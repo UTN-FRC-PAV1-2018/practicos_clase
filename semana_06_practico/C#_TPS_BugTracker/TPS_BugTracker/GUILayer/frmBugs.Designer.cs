@@ -45,8 +45,6 @@
             this.cboEstados = new System.Windows.Forms.ComboBox();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dgvBugs = new System.Windows.Forms.DataGridView();
-            this.id_bug_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_pasar_a_te = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
@@ -54,6 +52,15 @@
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_detalle_bug = new System.Windows.Forms.Button();
+            this.id_bug_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrioridadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CriticidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaAltaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AsignadoAColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.SuspendLayout();
@@ -227,30 +234,25 @@
             this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_bug_col,
-            this.colTitulo});
+            this.colTitulo,
+            this.DescripcionColumn,
+            this.ProductoColumn,
+            this.PrioridadColumn,
+            this.CriticidadColumn,
+            this.EstadoColumn,
+            this.FechaAltaColumn,
+            this.AsignadoAColumn});
+            this.dgvBugs.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvBugs.Location = new System.Drawing.Point(12, 154);
+            this.dgvBugs.MultiSelect = false;
             this.dgvBugs.Name = "dgvBugs";
             this.dgvBugs.ReadOnly = true;
+            this.dgvBugs.RowHeadersVisible = false;
             this.dgvBugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBugs.Size = new System.Drawing.Size(832, 275);
             this.dgvBugs.TabIndex = 6;
             this.dgvBugs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellClick);
             this.dgvBugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellContentClick);
-            // 
-            // id_bug_col
-            // 
-            this.id_bug_col.DataPropertyName = "id_bug";
-            this.id_bug_col.HeaderText = "ID";
-            this.id_bug_col.Name = "id_bug_col";
-            this.id_bug_col.ReadOnly = true;
-            this.id_bug_col.Visible = false;
-            // 
-            // colTitulo
-            // 
-            this.colTitulo.DataPropertyName = "titulo";
-            this.colTitulo.HeaderText = "Título";
-            this.colTitulo.Name = "colTitulo";
-            this.colTitulo.ReadOnly = true;
             // 
             // btn_pasar_a_te
             // 
@@ -272,6 +274,7 @@
             this.btn_salir.Size = new System.Drawing.Size(40, 40);
             this.btn_salir.TabIndex = 16;
             this.btn_salir.UseVisualStyleBackColor = true;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // btn_editar
             // 
@@ -330,6 +333,72 @@
             this.btn_detalle_bug.UseVisualStyleBackColor = true;
             this.btn_detalle_bug.Click += new System.EventHandler(this.btn_detalle_bug_Click);
             // 
+            // id_bug_col
+            // 
+            this.id_bug_col.DataPropertyName = "id_bug";
+            this.id_bug_col.HeaderText = "ID";
+            this.id_bug_col.Name = "id_bug_col";
+            this.id_bug_col.ReadOnly = true;
+            this.id_bug_col.Visible = false;
+            // 
+            // colTitulo
+            // 
+            this.colTitulo.DataPropertyName = "titulo";
+            this.colTitulo.HeaderText = "Título";
+            this.colTitulo.Name = "colTitulo";
+            this.colTitulo.ReadOnly = true;
+            // 
+            // DescripcionColumn
+            // 
+            this.DescripcionColumn.DataPropertyName = "descripcion";
+            this.DescripcionColumn.HeaderText = "Descripción";
+            this.DescripcionColumn.Name = "DescripcionColumn";
+            this.DescripcionColumn.ReadOnly = true;
+            // 
+            // ProductoColumn
+            // 
+            this.ProductoColumn.DataPropertyName = "n_producto";
+            this.ProductoColumn.HeaderText = "Producto";
+            this.ProductoColumn.Name = "ProductoColumn";
+            this.ProductoColumn.ReadOnly = true;
+            // 
+            // PrioridadColumn
+            // 
+            this.PrioridadColumn.DataPropertyName = "n_prioridad";
+            this.PrioridadColumn.HeaderText = "Prioridad";
+            this.PrioridadColumn.Name = "PrioridadColumn";
+            this.PrioridadColumn.ReadOnly = true;
+            // 
+            // CriticidadColumn
+            // 
+            this.CriticidadColumn.DataPropertyName = "n_criticidad";
+            this.CriticidadColumn.HeaderText = "Criticidad";
+            this.CriticidadColumn.Name = "CriticidadColumn";
+            this.CriticidadColumn.ReadOnly = true;
+            // 
+            // EstadoColumn
+            // 
+            this.EstadoColumn.DataPropertyName = "estado";
+            this.EstadoColumn.HeaderText = "Estado";
+            this.EstadoColumn.Name = "EstadoColumn";
+            this.EstadoColumn.ReadOnly = true;
+            // 
+            // FechaAltaColumn
+            // 
+            this.FechaAltaColumn.DataPropertyName = "fecha_alta";
+            this.FechaAltaColumn.HeaderText = "Fecha Alta";
+            this.FechaAltaColumn.Name = "FechaAltaColumn";
+            this.FechaAltaColumn.ReadOnly = true;
+            // 
+            // AsignadoAColumn
+            // 
+            this.AsignadoAColumn.DataPropertyName = "asignado_a";
+            this.AsignadoAColumn.HeaderText = "Asignado a...";
+            this.AsignadoAColumn.Name = "AsignadoAColumn";
+            this.AsignadoAColumn.ReadOnly = true;
+            this.AsignadoAColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AsignadoAColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // frmBugs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,7 +414,7 @@
             this.Controls.Add(this.dgvBugs);
             this.Controls.Add(this.pnl_filtros);
             this.Name = "frmBugs";
-            this.Text = "frmBugs";
+            this.Text = "Listado de Bugs";
             this.Load += new System.EventHandler(this.frmBugs_Load);
             this.pnl_filtros.ResumeLayout(false);
             this.pnl_filtros.PerformLayout();
@@ -372,7 +441,6 @@
         internal System.Windows.Forms.Label lbl_asignado;
         internal System.Windows.Forms.ComboBox cboEstados;
         internal System.Windows.Forms.Label lbl_estado;
-        internal System.Windows.Forms.DataGridView dgvBugs;
         internal System.Windows.Forms.Button btn_cerrar;
         internal System.Windows.Forms.Button btn_pasar_a_te;
         internal System.Windows.Forms.Button btn_detalle_bug;
@@ -380,8 +448,16 @@
         internal System.Windows.Forms.Button btn_editar;
         internal System.Windows.Forms.Button btn_asignar;
         internal System.Windows.Forms.Button btn_nuevo;
+        internal System.Windows.Forms.DataGridView dgvBugs;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_bug_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTitulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrioridadColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CriticidadColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaAltaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AsignadoAColumn;
 
     }
 }

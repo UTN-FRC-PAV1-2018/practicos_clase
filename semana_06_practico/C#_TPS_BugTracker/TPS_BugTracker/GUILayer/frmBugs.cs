@@ -19,6 +19,7 @@ namespace TPS_BugTracker
         public frmBugs()
         {
             InitializeComponent();
+            dgvBugs.AutoGenerateColumns = false;
         }
 
         private void llenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -151,6 +152,11 @@ namespace TPS_BugTracker
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
