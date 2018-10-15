@@ -117,6 +117,11 @@ namespace TPS_BugTracker
             if(dgvBugs.Rows.Count == 0) 
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                btn_editar.Enabled = false;
+                btn_detalle_bug.Enabled = false;
+                btn_pasar_a_te.Enabled = false;
+                btn_cerrar.Enabled = false;
             }
 
         }

@@ -76,6 +76,12 @@
 
         If dgvBugs.Rows.Count = 0 Then
             MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+            btn_editar.Enabled = False
+            btn_detalle_bug.Enabled = False
+            btn_pasar_a_te.Enabled = False
+            btn_cerrar.Enabled = False
         End If
     End Sub
 
