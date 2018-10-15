@@ -55,7 +55,7 @@
     <Compile Include="BusinessLayer\Services\CriticidadService.cs" />
     <Compile Include="BusinessLayer\Services\PrioridadService.cs" />
     <Compile Include="BusinessLayer\Services\EstadoService.cs" />
-    <Compile Include="BusinessLayer\Services\ProductService.cs" />
+    <Compile Include="BusinessLayer\Services\ProductoService.cs" />
     <Compile Include="BusinessLayer\Services\UsuarioService.cs" />
     <Compile Include="DataLayer\DAOs\EstadoDao.cs" />
     <Compile Include="DataLayer\DAOs\CriticidadDao.cs" />
