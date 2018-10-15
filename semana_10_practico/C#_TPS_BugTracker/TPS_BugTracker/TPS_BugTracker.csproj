@@ -61,10 +61,11 @@
     <Compile Include="GUILayer\Bugs\frmActualizarBug.Designer.cs">
       <DependentUpon>frmActualizarBug.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Usuario\frmABMUsuario.cs">
+    <Compile Include="GUILayer\Helper\GUIHelper.cs" />
+    <Compile Include="GUILayer\Usuarios\frmABMUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Usuario\frmABMUsuario.Designer.cs">
+    <Compile Include="GUILayer\Usuarios\frmABMUsuario.Designer.cs">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Bugs\frmBugs.cs">
@@ -91,10 +92,10 @@
     <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Usuario\frmUsuarios.cs">
+    <Compile Include="GUILayer\Usuarios\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Usuario\frmUsuarios.Designer.cs">
+    <Compile Include="GUILayer\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -102,7 +103,7 @@
     <EmbeddedResource Include="GUILayer\Bugs\frmActualizarBug.resx">
       <DependentUpon>frmActualizarBug.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Usuario\frmABMUsuario.resx">
+    <EmbeddedResource Include="GUILayer\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Bugs\frmBugs.resx">
@@ -117,7 +118,7 @@
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Usuario\frmUsuarios.resx">
+    <EmbeddedResource Include="GUILayer\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

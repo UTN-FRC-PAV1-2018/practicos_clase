@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using TPS_BugTracker.BusinessLayer;
 using TPS_BugTracker.BusinessLayer.Services;
 
-namespace TPS_BugTracker.GUILayer
+namespace TPS_BugTracker.GUILayer.Usuarios
 {
     public partial class frmABMUsuario : Form
     {
@@ -241,10 +241,7 @@ namespace TPS_BugTracker.GUILayer
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
-
-      
-
     }
 }

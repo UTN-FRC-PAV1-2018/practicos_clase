@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using TPS_BugTracker.BusinessLayer;
 using TPS_BugTracker.BusinessLayer.Services;
 
-namespace TPS_BugTracker.GUILayer
+namespace TPS_BugTracker.GUILayer.Usuarios
 {
     public partial class frmUsuarios : Form
     {
@@ -42,6 +42,7 @@ namespace TPS_BugTracker.GUILayer
         {
             frmABMUsuario formulario = new frmABMUsuario();
             formulario.ShowDialog();
+            btn_consultar_Click(sender, e);
         }
 
         private void chk_todos_CheckedChanged(object sender, EventArgs e)

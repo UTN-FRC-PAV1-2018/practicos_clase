@@ -1,4 +1,4 @@
-﻿namespace TPS_BugTracker
+﻿namespace TPS_BugTracker.GUILayer
 {
     partial class frmPrincipal
     {
